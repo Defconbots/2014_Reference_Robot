@@ -18,6 +18,7 @@ void setup()
     s2.attach(3);
     s1.attach(9);
     pinMode(fricken_laser, OUTPUT);
+    digitalWrite(fricken_laser, HIGH);
 }
 
 void loop()
