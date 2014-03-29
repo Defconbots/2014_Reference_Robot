@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using AForge;
@@ -63,8 +64,10 @@ namespace TowerDefender
                     }
                 }
 
+                var closestDistance = center.SquaredDistanceTo(closest);
+                var shouldFire = closestDistance < 20;
                 var delta = closest - center;
-                _controller.Update(delta.X, delta.Y);
+                _controller.Update(delta.X, delta.Y, shouldFire);
 
                 var g = Graphics.FromImage(frame);
                 using (Pen p = new Pen(Color.Red))
@@ -72,7 +75,7 @@ namespace TowerDefender
                     foreach (Rectangle r in rects)
                     {
                         g.DrawRectangle(p, r);
-                        g.DrawString("a", new Font("Consolas", 10), Brushes.Red, r.X, r.Y);
+                        g.DrawString("+", new Font("Consolas", 10), Brushes.Red, r.X, r.Y);
                     }
                 }
                 using (Pen p = new Pen(Color.Green))

@@ -56,7 +56,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(236, 170);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.OnPictureBoxClick);
             // 
             // comboBox1
             // 
@@ -90,9 +90,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(72, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
+            this.button2.Text = "Settings";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.OnSettingsClick);
             // 
             // comboBox2
             // 

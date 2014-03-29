@@ -45,7 +45,7 @@ namespace TowerDefender
                 {
                     comboBox1.Items.Add(device.Name);
                 }
-                comboBox1.SelectedIndex = 1; //make dafault to first cam
+                comboBox1.SelectedIndex = 0; //make dafault to first cam
             }
             catch (ApplicationException)
             {
@@ -83,9 +83,13 @@ namespace TowerDefender
                     pictureBox1.Height = bitmap.Height;
                     pictureBox1.Image = bitmap;
 
+                    pictureBox2.Left = pictureBox1.Left + pictureBox1.Width + 20;
+                    pictureBox2.Top = pictureBox1.Top;
                     pictureBox2.Width = bitmap.Width;
                     pictureBox2.Height = bitmap.Height;
                     pictureBox2.Image = processed;
+
+                    Width = pictureBox2.Width + pictureBox2.Left + 20;
                 }));
             }
             catch
@@ -107,7 +111,7 @@ namespace TowerDefender
             _inSetCenter = true;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void OnPictureBoxClick(object sender, EventArgs e)
         {
             var em = e as MouseEventArgs;
             if (_inSetColor)
@@ -123,7 +127,7 @@ namespace TowerDefender
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void OnSettingsClick(object sender, EventArgs e)
         {
             if ((videoSource != null) && (videoSource is VideoCaptureDevice))
             {
