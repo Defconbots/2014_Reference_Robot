@@ -15,10 +15,6 @@ Total Price: ~$75
 
 note: The logitech quickcam used is not recommended. The framerate and picture are terrible.
 
-## Assembly
-
-(insert schematic here)
-
 ## Firmware
 
 Clone this repo and load the hardware_interface.ino onto your arduino. This firmware interprets serial commands in the form of "n,n,n\n" into the servo position and laser on/off.
@@ -27,4 +23,12 @@ Clone this repo and load the hardware_interface.ino onto your arduino. This firm
 
 Clone this repo and load TowerDefender.sln. Run/Edit to your liking.
 
+## Assembled Robot
 
+![iso](https://raw.githubusercontent.com/Defconbots/2014_Reference_Robot/master/iso.jpg)
+
+
+![right](https://raw.githubusercontent.com/Defconbots/2014_Reference_Robot/master/right.jpg)
+
+
+![back](https://raw.githubusercontent.com/Defconbots/2014_Reference_Robot/master/back.jpg)
